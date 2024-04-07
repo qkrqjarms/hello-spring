@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import lombok.Getter;
+import lombok.Setter;
+
+
 
 
 
@@ -40,14 +44,10 @@ public class HelloController {
 
     }
 
+    @Getter @Setter
     static class Hello {
         private String neme;
-        public String getNeme() {
-            return neme;
-        }
-        public void setNeme(String neme) {
-            this.neme = neme;
-        }
+        
         
     }
 
