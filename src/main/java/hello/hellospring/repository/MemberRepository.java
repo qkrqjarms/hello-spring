@@ -4,9 +4,7 @@ import hello.hellospring.domain.Member;
 
 import java.util.*;
 
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface MemberRepository {
     Member save(Member member);
     

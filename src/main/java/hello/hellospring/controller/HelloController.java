@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.Getter;
 import lombok.Setter;
 
-
-
-
-
 @Controller
 public class HelloController {
 
@@ -21,22 +17,21 @@ public class HelloController {
         model.addAttribute("data", "hello!!");
         return new String("hello");
     }
-    
 
     @GetMapping("hello-mvc")
     public String helloMvc(@RequestParam(required = false) String name, Model model) {
         model.addAttribute("name", name);
         return "hello-template";
     }
-    
+
     @GetMapping("hello-string")
-    @ResponseBody  // http 바디부분으로 반환하겠다. 
+    @ResponseBody // http 바디부분으로 반환하겠다.
     public String helloString(@RequestParam(required = false) String name) {
         return "hello " + name;
     }
 
     @GetMapping("hello-api")
-    @ResponseBody  // http 바디부분으로 반환하겠다. 
+    @ResponseBody // http 바디부분으로 반환하겠다.
     public Hello helloApi(@RequestParam(required = false) String name) {
         Hello hello = new Hello();
         hello.setNeme(name);
@@ -44,12 +39,11 @@ public class HelloController {
 
     }
 
-    @Getter @Setter
+    @Getter
+    @Setter
     static class Hello {
         private String neme;
-        
-        
-    }
 
+    }
 
 }
